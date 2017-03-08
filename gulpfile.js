@@ -20,19 +20,19 @@ gulp.task('scripts', () => {
 		presets: ['es2015']
 	}))
 	.pipe(gulp.dest('./scripts/'))
-	.pipe(reload({stream: true}))
+	// .pipe(reload({stream: true}))
 })
 
-gulp.task('browser-sync', () => {
-	browserSync.init({
-		server: '.'
-	})
-})
+// gulp.task('browser-sync', () => {
+//	browserSync.init({
+//		server: '.'
+//	})
+// })
 
 gulp.task('watch', () => {
 	gulp.watch('./styles/**/*.scss', ['styles'])
 	gulp.watch('./scripts/main.js', ['scripts'])
-	gulp.watch('*.html', reload)
+//	gulp.watch('*.html', reload)
 })
 
-gulp.task('default', ['browser-sync', 'styles', 'scripts', 'watch'])
+gulp.task('default', ['styles', 'scripts', 'watch'])
